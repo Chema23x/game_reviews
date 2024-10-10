@@ -1,0 +1,4 @@
+Recursos utilizados para el desarrollo del proyecto
+
+### Animación dentro de la navbar
+https://www.youtube.com/watch?v=KwoSm0E8MOE
