@@ -1,7 +1,7 @@
 import Header from "./Header"
-import cxbox from "../assets/home/control-n.png"
-import pxbox from "../assets/home/control-play.png"
-import nxbox from "../assets/home/control-x.png"
+import cxbox from "../assets/home/control_n.png"
+import pxbox from "../assets/home/control_play.png"
+import nxbox from "../assets/home/control_x.png"
 import { useEffect, useState } from "react"
 
     const imgs: { [key: number]: string } = {

@@ -28,7 +28,7 @@ export default function Header(){
                     <div className="slid animate-first"></div>
                 </nav>
                 <div className="flex justify-center items-center text-white">
-                    <a className="hover:scale-125 transition" href="">Iniciar Sesion</a>
+                    <a className="hover:scale-125 transition" href="/iniciar-sesion">Iniciar Sesion</a>
                 </div>
             </section>
         </>
