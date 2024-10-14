@@ -13,10 +13,7 @@ export default function Login() {
 
     useEffect(() => {
         fetch("http://localhost:8080/user", {
-            method: "GET",
-            headers: {
-                "Content-Type": "application/json",
-            }
+            method: "GET"
         })
             .then(res => res.json())
             .then(r => console.log(r))
