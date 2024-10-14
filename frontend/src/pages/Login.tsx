@@ -31,7 +31,7 @@ export default function Login() {
                 className="bg-black text-white w-3/12 h-2/3 p-10 rounded-md form-shadow flex flex-col items-center gap-y-10 absolute"
             >
                 <header className="text-center text-4xl">
-                    <h1>Inciar sesión</h1>
+                    <h1>Iniciar sesión</h1>
                 </header>
                 <div className="flex flex-col items-start w-full gap-y-1">
                     <label htmlFor="username">Usuario:</label>
