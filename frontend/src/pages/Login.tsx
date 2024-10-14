@@ -15,7 +15,7 @@ export default function Login() {
         fetch("http://localhost:8080/user", {
             method: "GET",
             headers: {
-                "Content-Type": "application/json"  // Use appropriate headers if needed
+                "Content-Type": "application/json",
             }
         })
             .then(res => res.json())
