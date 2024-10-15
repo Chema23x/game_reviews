@@ -14,8 +14,8 @@ export default function Login() {
     }, [])
 
     return (
-        <main className="h-screen min-h-screen flex justify-center items-center relative">
-            <div className="bg-[url(assets/login/login_bg.jpg)] bg-cover bg-no-repeat w-full h-full bg-center" />
+        <main className={`h-screen min-h-screen flex ${!register && "justify-center"} items-center relative`}>
+            <div className={`bg-cover bg-no-repeat ${register ? "w-1/2 bg-[url(assets/login/register_bg.jpg)]" : "w-full bg-[url(assets/login/login_bg.jpg)]" } h-full bg-center`} />
             {!register ?
                 <LoginForm changeForm={() => setRegister(true)} />
                 :
