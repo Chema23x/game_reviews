@@ -9,3 +9,7 @@ https://www.dafont.com/gameplay.font
 ### icons
 
 heroicons.com
+
+### HTTP CODES
+
+https://http.cat/

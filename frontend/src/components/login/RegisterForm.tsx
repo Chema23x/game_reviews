@@ -80,10 +80,28 @@ export default function RegisterForm({ changeForm }: RegisterFormProps) {
     };
 
     // Manejar el envío del formulario
-    const handleForm = (e: FormEvent<HTMLFormElement>) => {
+    const handleForm = async (e: FormEvent<HTMLFormElement>) => {
         e.preventDefault();
         if (validateForm()) {
-            console.log("Formulario válido", formValues);
+
+            const formData = {
+                userName: formValues.username,
+                userPassword: formValues.password,
+                userPhone: formValues.phone,
+                userEmail: formValues.email
+            }
+
+            const res = await fetch("http://localhost:8080/api/v1/auth/register", {
+                method: "POST",
+                headers:{
+                    "Content-Type": "application/json"
+                },
+                body: JSON.stringify(formData)
+            });
+            if(res.status === 201){
+                window.location.href = "/"
+            }
+            
         } else {
             console.log("Errores en el formulario", formErrors);
         }

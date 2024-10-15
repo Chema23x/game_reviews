@@ -4,19 +4,36 @@ import PasswordInput from "./PasswordInput";
 
 type LoginFormProps = {
     changeForm: (value: boolean) => void;
+    setMessage: (value: string) => void;
+    setStatus: (value: number) => void;
 };
 
-export default function LoginForm({ changeForm }: LoginFormProps) {
+export default function LoginForm({ changeForm, setMessage, setStatus }: LoginFormProps) {
     const [username, setUsername] = useState("");
     const [password, setPassword] = useState("");
 
-    const handleForm = (e: FormEvent<HTMLFormElement>) => {
+    const handleForm = async (e: FormEvent<HTMLFormElement>) => {
         e.preventDefault();
         const formData = {
             username,
             password
         };
-        console.log(formData);
+        try {
+            const res = await fetch("http://localhost:8080/api/v1/auth/login", {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json"
+                },
+                body: JSON.stringify(formData)
+            });
+
+            const data = await res.json();
+            setMessage(data.message);
+            setStatus(res.status); 
+
+        } catch (error) {
+            setMessage("Error de conexión.");
+        }
     };
 
     return (
@@ -31,7 +48,7 @@ export default function LoginForm({ changeForm }: LoginFormProps) {
             <div className="flex flex-col items-start w-full gap-y-2">
                 <label htmlFor="username">Usuario:</label>
                 <input
-                    className="rounded-sm w-full text-black"
+                    className="rounded-sm w-full pl-2 text-black"
                     type="text"
                     name="username"
                     id="username"
