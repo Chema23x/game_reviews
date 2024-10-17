@@ -52,7 +52,7 @@ public class UserService {
 		if(existingUserOptional.isPresent()) {
 			User existingUser = existingUserOptional.get();
 			
-			if(existingUser.getUserPassword().matches(loginRequest.getPassword())) {				
+			if(existingUser.getUserPassword().equals(loginRequest.getPassword())) {				
 				return existingUser;
 			}else {
 				throw new IllegalArgumentException("Credenciales inválidas");

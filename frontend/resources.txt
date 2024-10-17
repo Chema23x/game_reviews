@@ -13,3 +13,6 @@ heroicons.com
 ### HTTP CODES
 
 https://http.cat/
+
+### Dependencias Maven 
+https://mvnrepository.com/
